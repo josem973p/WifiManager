@@ -1,3 +1,4 @@
+
 from Polygon import PolygonManager,NmeaConverter
 from NcosSdk.Auth import Auth
 from NcosSdk.csclient import CSClient,EventingCSClient
@@ -6,6 +7,7 @@ from shapely.geometry import Point, Polygon
 import pynmea2
 import threading
 import time
+import Geofence
 
 
 
@@ -13,21 +15,32 @@ import time
 if __name__ == '__main__':
 
 
+    listaPoly =Geofence.makePolygons(Geofence.geofence)
 
     cp = EventingCSClient('ibr1700_gnss')
     system_id = cp.get('config/system/system_id')
+    cp.put('/config/wlan/radio/1/bss/0/enabled', True)
+    cp.put('/config/wlan/radio/0/bss/0/enabled', True)
     wifi = cp.get('config/wlan/radio/1/bss/0/')
+
+
 
     resp = cp.get('status/gps/fix')
 
 
     def validatePositionStatus():
+        wasInGeofence= False
+        aux=False
         while True:
             try:
                 resp = cp.get('status/gps/fix')
                 routerLocalization = NmeaConverter.positionConverter(resp)
-                inPolygon = PolygonManager.isInPolygon(routerLocalization)
-                ManageWiFi.manageWiFiStatus(inPolygon)
+
+                inPolygon = PolygonManager.isInPolygon(routerLocalization,listaPoly,wasInGeofence,aux)
+
+                aux=inPolygon
+
+
             except Exception as e:
                 print(f"Error: {e}")
                 # Esperar unos segundos antes de reiniciar el bucle
