@@ -13,8 +13,6 @@ def positionConverter(nmeaObject):
                             longitude['second'] if longitude['degree'] >= 0 else -longitude['second']) / 3600
 
 
-    #decimal_latitude = latitude['degree'] + (latitude['minute'] ) + latitude['second'] / 3600
-    #decimal_longitude = longitude['degree'] + (longitude['minute'] / 60) + (longitude['second'] / 3600)
     routerLocalization = Point(decimal_latitude, decimal_longitude)
     #routerLocalization = Point(17.44444, -99.9999999)
 

@@ -1,10 +1,58 @@
-import json
+
 from shapely.geometry import Polygon
-19.433479796664603, -99.11106966828282
-19.433561, -99.109675
+
 geofence = {
         "array": [
+
             {
+                "geocerca": [
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    }
+                ]
+            },
+            {
+                "geocerca": [
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    },
+                    {
+                        "latitude": 14.5555,
+                        "longitude": 12.2223333
+                    }
+                ]
+            },
+{
                 "geocerca": [
                     {
                         "latitude": 19.433479796664603,
@@ -29,174 +77,6 @@ geofence = {
 
                         "latitude": 19.433044739392315,
                         "longitude": -99.11292575672971
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    }
-                ]
-            },
-            {
-                "geocerca": [
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
-                    },
-                    {
-                        "latitude": 14.5555,
-                        "longitude": 12.2223333
                     }
                 ]
             },

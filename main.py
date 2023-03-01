@@ -1,10 +1,6 @@
-
-from Polygon import PolygonManager,NmeaConverter
-from NcosSdk.Auth import Auth
-from NcosSdk.csclient import CSClient,EventingCSClient
-from NcosSdk import ManageWiFi
-from shapely.geometry import Point, Polygon
-import pynmea2
+import PolygonManager
+import NmeaConverter
+from csclient import EventingCSClient
 import threading
 import time
 import Geofence
@@ -17,7 +13,7 @@ if __name__ == '__main__':
 
     listaPoly =Geofence.makePolygons(Geofence.geofence)
 
-    cp = EventingCSClient('ibr1700_gnss')
+    cp = EventingCSClient('Wifi_Manager')
     system_id = cp.get('config/system/system_id')
     cp.put('/config/wlan/radio/1/bss/0/enabled', True)
     cp.put('/config/wlan/radio/0/bss/0/enabled', True)
@@ -31,12 +27,13 @@ if __name__ == '__main__':
     def validatePositionStatus():
         wasInGeofence= False
         aux=False
+        numeroPol=0
         while True:
             try:
                 resp = cp.get('status/gps/fix')
                 routerLocalization = NmeaConverter.positionConverter(resp)
 
-                inPolygon = PolygonManager.isInPolygon(routerLocalization,listaPoly,wasInGeofence,aux)
+                inPolygon,numeroPol = PolygonManager.isInPolygon(routerLocalization, listaPoly, wasInGeofence, aux,numeroPol)
 
                 aux=inPolygon
 

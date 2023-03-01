@@ -1,7 +1,24 @@
-from shapely.geometry import Point, Polygon
-from  NcosSdk import  ManageWiFi
+import ManageWiFi
 
-def isInPolygon(localization,polygons,wasInGeofence,aux):
+
+def isInPolygon(localizacion, poligonos, estabaDentro, auxiliar, numeroPol):
+    conta=0
+    for indice, poligono in enumerate(poligonos):
+        if estabaDentro:
+            break
+        if auxiliar is True:
+            if (indice+1)!=numeroPol:
+                conta=conta+1
+                continue
+
+        estaDentro = poligono.contains(localizacion)
+        estabaDentro = ManageWiFi.manageWiFiStatus(estaDentro, auxiliar)
+        if not estabaDentro:
+            auxiliar = False
+        conta=conta+1
+    return estabaDentro,conta
+
+def isInPolygon2(localization,polygons,wasInGeofence,aux):
 
     for polygon_coords in polygons:
 
@@ -14,7 +31,7 @@ def isInPolygon(localization,polygons,wasInGeofence,aux):
         #geocerca = Polygon(puntos)
         esta_dentro = polygon_coords.contains(localization)
 
-        status= ManageWiFi.manageWiFiStatus(esta_dentro,wasInGeofence,aux)
+        status= ManageWiFi.manageWiFiStatus(esta_dentro, wasInGeofence, aux)
         wasInGeofence=status
         if(wasInGeofence==False):
             aux=False
