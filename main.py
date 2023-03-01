@@ -37,6 +37,8 @@ if __name__ == '__main__':
 
                 aux=inPolygon
 
+                time.sleep(300)
+
 
             except Exception as e:
                 print(f"Error: {e}")
